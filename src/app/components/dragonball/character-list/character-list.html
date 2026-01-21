@@ -1,0 +1,11 @@
+<h3>{{ listNameOrDefault }}</h3>
+<ul class="list-group">
+  @for (character of characters(); track character.id) {
+    @if(character.power > 500) {
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{ character.name }}
+        <span class="badge rounded-pill" [ngClass]="getPowerClass(character.power)">{{ character.power }}</span>
+      </li>
+    }
+  }
+</ul>
